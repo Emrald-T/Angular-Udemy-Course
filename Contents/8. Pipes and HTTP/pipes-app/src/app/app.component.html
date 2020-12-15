@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <input type="text" [(ngModel)]="filteredStatus" class="form-input">
+      <div>
+        <span style="margin-right: 1em">App status: {{ asyncData | async }}</span>
+        <button
+          type="button"
+          class="btn btn-primary pull-right"
+          (click)="toggleSortOrder()">
+          Toggle sort order
+        </button>
+      </div>
+      <hr/>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers | filter:filteredStatus:'status' | sort:'started':descSortOrder"
+          [ngClass]="getStatusClasses(server)">
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | shorten:15 }}</strong> |
+          {{ server.instanceType | uppercase | reverse }} |
+          {{ server.started | date | uppercase}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

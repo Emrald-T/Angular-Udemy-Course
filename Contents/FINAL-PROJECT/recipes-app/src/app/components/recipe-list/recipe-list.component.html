@@ -1,0 +1,41 @@
+<div class="row" style="position: relative;margin-bottom: 0.5em">
+    <div class="col-xs-12 flex-box-split pd-sm-bottom">
+        <h4><strong>{{ title }}</strong></h4>
+        <div class="flex-box-split">
+            <button type="button" class="btn btn-default visible-xs" (click)="toggleFlag()">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </button>
+            <button class="btn btn-primary" [routerLink]="['new']">New Recipe</button>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="hidden-xs">
+            <div *ngTemplateOutlet="recipeListItemTmpl"></div>
+        </div>
+    </div>
+    <div class="col-xs-12 item-list">
+        <div class="visible-xs">
+            <div class="collapse" #recipeListMenu>
+                <div *ngTemplateOutlet="recipeListItemTmpl"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #recipeListItemTmpl>
+    <label class="sr-only">Search:</label>
+    <input class="form-control" type="text"
+        placeholder="Search recipe..."
+        (input)="searchForRecipe($event)"
+        style="margin-bottom: 1em;" />
+    <!-- <hr /> -->
+    <div class="list-group" style="margin-bottom: 5px">
+        <app-recipe-list-item
+            *ngFor="let recipe of recipes;let i = index"
+            [recipe]="recipe"
+            [index]="i"
+            (click)="setItemSelected()">
+        </app-recipe-list-item>
+    </div>
+
+</ng-template>

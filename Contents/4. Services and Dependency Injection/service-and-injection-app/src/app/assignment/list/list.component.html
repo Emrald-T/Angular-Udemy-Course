@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h3>{{ title }}</h3>
+    </div>
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let user of items; let i = index">
+                <div>
+                    {{ user.name }} |
+                    <a href="#" (click)="onChangeStatus(i, user.active)">
+                        Set to {{ user.active ? 'Inactive' : 'Active' }}
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<app-header [title]="title" (tabChange)="onNavigate($event)"></app-header>
+<div class="container">
+  <!-- <app-recipe-book *ngIf="currentPage === 'RefBook'"></app-recipe-book>
+  <app-shopping-list *ngIf="currentPage === 'ShopList'"></app-shopping-list> -->
+  <router-outlet></router-outlet>
+</div>
+<app-message-toast></app-message-toast>

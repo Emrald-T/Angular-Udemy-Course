@@ -1,0 +1,58 @@
+<div class="row" style="position: relative;">
+    <div class="col-xs-12 food-img" [ngStyle]="{'background-image': 'url(' + recipe.imagePath + ')'}">
+    </div>
+    <img [src]="recipe.imagePath" alt="" class="img-responsive">
+</div>
+<div class="row">
+    <div class="col-xs-12 flex-box-split">
+        <h3>
+            <strong>{{ recipe.name }}</strong>
+            <div>
+                <small>{{ recipe.description }}</small>
+            </div>
+        </h3>
+        <div class="dropdown" appDropDownToggle>
+            <button type="button"
+                class="btn btn-primary dropdown-toggle"
+                style="margin-top: 15px;">
+                Manage
+                <span class="caret" style="margin-left: 2px;"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a style="cursor: pointer;"
+                        (click)="add2ShopList(recipe.ingredients)">
+                        Add to Shopping List
+                    </a>
+                </li>
+                <li [routerLink]="['edit']"><a>Edit</a></li>
+                <li>
+                    <a (click)="onDeleteRecipe()">
+                        Delete
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-7">
+        <div>
+            <h5><strong>Recipe</strong></h5>
+            <p>{{ recipe.steps.length ? recipe.steps : 'Steps to make the dish...' }}</p>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div>
+            <h5><strong>Ingredients</strong></h5>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of recipe.ingredients">
+                    <div class="flex-box-split">
+                        <span>{{ item.name }}</span>
+                        <span>{{ item.amount }}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

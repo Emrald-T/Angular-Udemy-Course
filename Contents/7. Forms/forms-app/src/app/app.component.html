@@ -1,0 +1,144 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div
+          id="user-data"
+          ngModelGroup="userData"
+          #userData="ngModelGroup">
+          <div
+            class="form-group">
+            <label for="username">Username</label>
+            <input type="text"
+                    id="username"
+                    class="form-control"
+                    [ngModel]="username"
+                    name="username"
+                    required>
+          </div>
+          <button class="btn btn-default" type="button"
+            (click)="suggestUserName()">Suggest an Username</button>
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email"
+                    id="email"
+                    class="form-control"
+                    ngModel
+                    name="email"
+                    required
+                    email
+                    #mail="ngModel">
+            <span class="help-block" *ngIf="!mail.valid && mail.touched">Please enter a valid email</span>
+          </div>
+        </div>
+        <span class="help-block" *ngIf="!userData.valid && userData.touched">Invalid user data</span>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select id="secret"
+                  class="form-control"
+                  ngModel
+                  name="secret">
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="question">Why you?</label>
+          <textarea
+            id="question"
+            class="form-control"
+            rows="3"
+            name="questionAnswer"
+            [(ngModel)]="answer"></textarea>
+        </div>
+        <div> Your answer: {{ answer }} </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              ngModel
+              [value]=gender>
+              {{gender}}
+          </label>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!myForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12" *ngIf="submitted">
+      <h3>Your data</h3>
+      <p>Username: {{ userInfo.user }}</p>
+      <p>Email: {{ userInfo.email }}</p>
+      <p>Secret Question: {{ userInfo.secretQ }}</p>
+      <p>Answer: {{ userInfo.answer }}</p>
+      <p>Gender: {{ userInfo.gender }}</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- <app-assignment1></app-assignment1> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <div id="user-data">
+          <div class="form-group" formGroupName="userData">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control"
+              formControlName="user">
+            <span class="help-block"
+              *ngIf="!signUpForm.get('userData.user').valid && signUpForm.get('userData.user').touched">
+              <span *ngIf="signUpForm.get('userData.user').errors['nameIsForbidden']">Invalid user name</span>
+              <span *ngIf="signUpForm.get('userData.user').errors['required']">Please enter a value</span>
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email" id="email" class="form-control"
+              formControlName="email">
+            <span class="help-block"
+              *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched">
+              <span *ngIf="signUpForm.get('email').errors['emailIsForbidden']">Invalid email</span>
+              <span *ngIf="!signUpForm.get('email').errors['emailIsForbidden']">Please enter a valid email</span>
+            </span>
+          </div>
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              formControlName="gender"
+              [value]=gender>
+                {{gender}}
+          </label>
+        </div>
+        <div formArrayName="hobbies" class="form-group">
+          <h4>Hobbies</h4>
+          <button
+            class="btn btn-primary"
+            type="button"
+            (click)="onAddHobby()">Add Hobby</button>
+          <div class="form-group" *ngFor="let hobbyControl of getControls().controls; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+        <div class="help-block"
+            *ngIf="!signUpForm.valid && signUpForm.touched">
+              Please enter a valid email
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<app-assignment2></app-assignment2>

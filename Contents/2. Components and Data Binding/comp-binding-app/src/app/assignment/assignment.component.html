@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12">
+        <app-game-control
+            (gameStart)="onNumberAdded($event)"
+            (gameReset)="onResetCalled()"></app-game-control>
+    </div>
+    <hr />
+    <div class="col-sm-12">
+        <span *ngFor="let entry of numbers" style="margin: 2.5px; display: inline-block;">
+            <app-odd *ngIf="entry.num % 2 !== 0">
+                <app-numbox [value]="entry.num"></app-numbox>
+            </app-odd>
+            <app-even *ngIf="entry.num % 2 === 0">
+                <app-numbox [value]="entry.num"></app-numbox>
+            </app-even>
+        </span>
+    </div>
+</div>

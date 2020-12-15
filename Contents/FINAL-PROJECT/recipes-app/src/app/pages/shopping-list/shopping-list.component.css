@@ -1,0 +1,16 @@
+.panel-expansion-btn,
+.list-group-item {
+    cursor: pointer;
+}
+
+.panel-expansion-btn,
+.panel-expansion-btn:focus {
+    border: none;
+    outline: none;
+}
+
+.flex-box-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

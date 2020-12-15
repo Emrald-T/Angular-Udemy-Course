@@ -1,0 +1,22 @@
+.scroll-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+img {
+    max-height: 300px;
+    margin: auto;
+}
+
+.food-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    z-index: -1;
+}

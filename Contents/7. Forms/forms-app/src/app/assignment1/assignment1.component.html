@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onSubmit()" #form1="ngForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        name="mailId"
+                        id="email"
+                        class="form-control"
+                        ngModel
+                        email
+                        required
+                        #mail="ngModel">
+                </div>
+                <div class="alert alert-warning" *ngIf="mail.invalid && mail.touched">Invalid email Id</div>
+                <div class="form-group">
+                    <label for="subscribe">Subcription</label>
+                    <select
+                        name="subscription"
+                        id="subscribe"
+                        class="form-control"
+                        [ngModel]="subsDef"
+                        #subs="ngModel">
+                        <option value="basic">Basic</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="pro">Professional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input
+                        type="password"
+                        name="pword"
+                        id="pass"
+                        class="form-control"
+                        ngModel
+                        required
+                        #pword="ngModel">
+                </div>
+                <div class="alert alert-danger" *ngIf="!pword.valid && pword.touched">
+                    Please enter a valid password
+                </div>
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!form1.valid">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row" *ngIf="submitted">
+        <div class="col-xs-12">
+            <h3>Form Data</h3>
+            <p>Email: {{ myData.mailId }}</p>
+            <p>Subscription: {{ myData.subscription }}</p>
+            <p>Password: {{ myData.pword }}</p>
+        </div>
+    </div>
+</div>

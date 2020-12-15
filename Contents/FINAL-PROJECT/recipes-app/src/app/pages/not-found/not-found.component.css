@@ -1,0 +1,32 @@
+.infoTextBox {
+    width: 100%;
+    min-height: 300px;
+}
+
+h1 {
+    font-weight: 750;
+    color: #bebebe
+}
+
+.flex-box-center {
+    flex-direction: column;
+}
+
+.annoyed-emoji {
+    position: relative;
+}
+
+.annoyed-emoji::before {
+    content: "";
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px 13px;
+    background-color: #fdd200;
+}
+
+.annoyed-emoji::after {
+    content: "-_-";
+    position: absolute;
+    left: 6px;
+    top: -3px;
+}

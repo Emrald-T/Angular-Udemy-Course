@@ -1,0 +1,16 @@
+a {
+    cursor: pointer;
+}
+
+.text-wrap {
+    word-wrap: break-word;
+    max-height: 35px;
+    overflow: hidden;
+}
+
+.wrapped::after {
+    content: "...";
+    position: absolute;
+    right: 10px;
+    top: 41px;
+}

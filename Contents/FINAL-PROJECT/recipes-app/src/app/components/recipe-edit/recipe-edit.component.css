@@ -1,0 +1,10 @@
+.flex-box-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

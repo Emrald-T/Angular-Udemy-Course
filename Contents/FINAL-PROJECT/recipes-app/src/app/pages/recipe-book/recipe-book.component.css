@@ -1,0 +1,10 @@
+.scroll-container {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.outer {
+    height: 100%;
+    overflow: hidden;
+}

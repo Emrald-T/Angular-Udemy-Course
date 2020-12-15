@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>{{ title }}</p>
+        <button class="btn btn-default" [hidden]="panelOpen" (click)="onTogglePanel">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+        <button class="btn btn-default" [hidden]="!panelOpen" (click)="onTogglePanel">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+    </div>
+</div>

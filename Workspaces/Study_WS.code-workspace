@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "..\\Contents\\1. Basics"
+		},
+		{
+			"path": "..\\Contents\\2. Components and Data Binding"
+		},
+		{
+			"path": "..\\Contents\\3. Directives"
+		},
+		{
+			"path": "..\\Contents\\4. Services and Dependency Injection"
+		},
+		{
+			"path": "..\\Contents\\5. Routing"
+		},
+		{
+			"path": "..\\Contents\\6. Observables"
+		},
+		{
+			"path": "..\\Contents\\7. Forms"
+		}
+	],
+	"settings": {}
+}

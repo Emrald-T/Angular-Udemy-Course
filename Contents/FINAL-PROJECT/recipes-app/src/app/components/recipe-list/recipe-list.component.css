@@ -1,0 +1,33 @@
+a {
+    cursor: pointer;
+}
+
+.text-wrap {
+    word-wrap: break-word;
+    max-height: 35px;
+    overflow: hidden;
+}
+
+.wrapped::after {
+    content: "...";
+    position: absolute;
+    right: 10px;
+    top: 41px;
+}
+
+.pd-sm-bottom {
+    padding-bottom: 1em;
+}
+
+.item-list {
+    position: absolute;
+    z-index: 3;
+    top: 3.5em;
+    background: white;
+}
+
+@media screen and (max-width: 767px) {
+    .item-list {
+        padding: 0;
+    }
+}

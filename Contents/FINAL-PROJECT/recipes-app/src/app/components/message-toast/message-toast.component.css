@@ -1,0 +1,28 @@
+.message-toast {
+    padding: 1em;
+    background: rgb(52, 45, 64);
+    color: white;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 0 15px;
+    word-break: break-word;
+    opacity: 0;
+    /* transition: opacity 500ms ease-in-out; */
+}
+
+.mt-holder {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+}
+
+.mt-holder.show {
+    position: fixed;
+}
+
+.mt-holder.show > .message-toast {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
